@@ -3,16 +3,24 @@ body{
   justify-content: center;
   align-items: center;
   background-color: black;
+  flex-direction: column;
 }
 .container{
   width: 1000px;
-  height: 900px;
+  height: 3900px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-
+.holder{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 .space-image{
   transform: scale(.75);
@@ -22,11 +30,16 @@ body{
   background-repeat: no-repeat;
   border-radius: 5px;
 }
-
+#explanation{
+  color: white;
+}
 .space-image:hover {
   opacity: 0.7;
 }
 
+h1{
+  color: white;
+}
 
 #modal {
   display: none;
@@ -40,11 +53,12 @@ body{
   background-color: rgba(0,0,0,.5)
 }
 #modal-image{
-  margin: auto;
+  margin: 150px auto;
   width: 80%;
   height: 80%;
   border-radius: 2px;
-
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #close-modal{
@@ -54,4 +68,7 @@ body{
   right: 25px;
   font-size: 35px;
   background-color: black;
+  border: 0;
+  pading: 0;
+
 }
