@@ -1,11 +1,21 @@
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
   flex-direction: column;
 }
-.container{
+
+.container {
+  width: 1000px;
+  height: 3900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery {
   width: 1000px;
   height: 3900px;
   display: flex;
@@ -13,7 +23,8 @@ body{
   align-items: center;
   flex-wrap: wrap;
 }
-.holder{
+
+.holder {
   width: 300px;
   height: 300px;
   display: flex;
@@ -22,7 +33,7 @@ body{
   flex-direction: column;
 }
 
-.space-image{
+.space-image {
   transform: scale(.75);
   width: 200px;
   height: 200px;
@@ -30,14 +41,16 @@ body{
   background-repeat: no-repeat;
   border-radius: 5px;
 }
-#explanation{
+
+#explanation {
   color: white;
 }
+
 .space-image:hover {
   opacity: 0.7;
 }
 
-h1{
+h1 {
   color: white;
 }
 
@@ -50,9 +63,10 @@ h1{
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,.5)
+  background-color: rgba(0, 0, 0, .5)
 }
-#modal-image{
+
+#modal-image {
   margin: 150px auto;
   width: 80%;
   height: 80%;
@@ -61,7 +75,7 @@ h1{
   background-repeat: no-repeat;
 }
 
-#close-modal{
+#close-modal {
   color: white;
   position: absolute;
   top: 10px;
@@ -70,5 +84,12 @@ h1{
   background-color: black;
   border: 0;
   pading: 0;
+}
 
+#lastBtn.sticky {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  width: 8em;
+  margin-top: -2.5em;
 }

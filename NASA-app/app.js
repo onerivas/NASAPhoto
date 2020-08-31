@@ -1,8 +1,12 @@
 $(() => {
-  let clicked = false;
+  // let currentMonth = today.getMonth()
+  let today = new Date()
+  let adjustMonth = 1;
+  let currentMonth = today.getMonth() + adjustMonth;
+  console.log(today.getMonth());
+  // let clicked = false;
   const $closeBtn = $('#close-modal')
   // testing variable for date
-  let today = new Date()
   // console.log(today);
   // console.log(date);
   //opening the Modal
@@ -17,6 +21,7 @@ $(() => {
     $('#modal').css('display', 'none')
   }
   $closeBtn.on('click', closeModal)
+
   // //function for the day of the month
   // let newDayOfMonth = () => {
   //   for (i = 1; i < 31; i++) {
@@ -31,18 +36,41 @@ $(() => {
   // }
   // console.log(newDayOfMonth);
   // newDayOfMonth()
+  let currentYear = today.getFullYear()
 
+  const $previousBtn = $('#previousBtn')
 
+  const previousMonth = () => {
+    $('.gallery').empty()
+    adjustMonth -= 1
+    console.log(today.getMonth());
+    console.log(adjustMonth)
+    console.log(currentMonth);
+    dataRequest()
+
+  }
+  $previousBtn.on('click', previousMonth)
+  const $nextBtn = $('#nextBtn')
+  const nextMonth = () => {
+    $('.gallery').empty()
+    adjustMonth += 1
+    console.log(today.getMonth());
+    console.log(adjustMonth)
+    console.log(currentMonth);
+    dataRequest()
+  }
+  $nextBtn.on('click', nextMonth)
   // Getting the photos for all the divs
+
   let dataRequest = () => {
-    for (i = 1; i <= 31; i++) {
+    for (i = 1; i <= 2; i++) {
       $.ajax({
-        url: `https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${today.getFullYear()}-${today.getMonth()+1}-${i}`
+        url: `http://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
       }).then((data) => {
         // console.log(i);
         const explanation = data.explanation
         const imageUrl = data.url
-        const $spaceHolder = $('<div>').addClass('holder').appendTo('.container')
+        const $spaceHolder = $('<div>').addClass('holder').appendTo('.gallery')
         const $spaceImg = $('<div>')
           .attr('id', i)
           .addClass('space-image')
@@ -52,7 +80,7 @@ $(() => {
         const $imageText = $('<div>')
           .text(data.title).css('color', 'white')
           .appendTo($spaceHolder)
-
+        console.log(data);
 
       })
       //    console.log('https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date='
@@ -66,11 +94,11 @@ $(() => {
   // let date = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
   // console.log(date);
   //grabbing modal elements
-  let currentImage = $(event.currentTarget).css('background-image')
-  console.log(currentImage);
-  // let image = $(event.currentTarget).attr('id')
-
-  console.log(`this is the ${currentImage}`);
+  // let currentImage = $(event.currentTarget).css('background-image')
+  // console.log(currentImage);
+  // // let image = $(event.currentTarget).attr('id')
+  //
+  // console.log(`this is the ${currentImage}`);
 
 
 
