@@ -1,0 +1,22 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 1000px;
+  height: 900px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.space-image{
+  transform: scale(.75);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
