@@ -3,7 +3,7 @@ $(() => {
   let today = new Date()
   let adjustMonth = 1;
   let currentMonth = today.getMonth() + adjustMonth;
-  console.log(today.getMonth());
+  // console.log(today.getMonth());
   const findMonth = () => {
     currentMonth = today.getMonth() + adjustMonth;
   }
@@ -47,9 +47,9 @@ $(() => {
     $('.gallery').empty()
     adjustMonth -= 1
     findMonth()
-    console.log(today.getMonth());
-    console.log(adjustMonth)
-    console.log(currentMonth);
+    // console.log(today.getMonth());
+    // console.log(adjustMonth)
+    // console.log(currentMonth);
     dataRequest()
 
   }
@@ -59,9 +59,9 @@ $(() => {
     $('.gallery').empty()
     adjustMonth += 1
     findMonth()
-    console.log(today.getMonth());
-    console.log(adjustMonth)
-    console.log(currentMonth);
+    // console.log(today.getMonth());
+    // console.log(adjustMonth)
+    // console.log(currentMonth);
     dataRequest()
   }
   $nextBtn.on('click', nextMonth)
