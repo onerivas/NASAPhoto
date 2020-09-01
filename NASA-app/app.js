@@ -4,6 +4,9 @@ $(() => {
   let adjustMonth = 1;
   let currentMonth = today.getMonth() + adjustMonth;
   console.log(today.getMonth());
+  const findMonth = () => {
+    currentMonth = today.getMonth() + adjustMonth;
+  }
   // let clicked = false;
   const $closeBtn = $('#close-modal')
   // testing variable for date
@@ -43,6 +46,7 @@ $(() => {
   const previousMonth = () => {
     $('.gallery').empty()
     adjustMonth -= 1
+    findMonth()
     console.log(today.getMonth());
     console.log(adjustMonth)
     console.log(currentMonth);
@@ -54,6 +58,7 @@ $(() => {
   const nextMonth = () => {
     $('.gallery').empty()
     adjustMonth += 1
+    findMonth()
     console.log(today.getMonth());
     console.log(adjustMonth)
     console.log(currentMonth);
@@ -63,7 +68,7 @@ $(() => {
   // Getting the photos for all the divs
 
   let dataRequest = () => {
-    for (i = 1; i <= 2; i++) {
+    for (i = 1; i <= 31; i++) {
       $.ajax({
         url: `http://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
       }).then((data) => {
