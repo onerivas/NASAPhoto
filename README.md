@@ -6,7 +6,7 @@ https://onerivas.github.io/NASA-app/
 Technologies used
 
 
-NASA photography was created using HTML, CSS, JavaScript, jQuery, and AJAX.
+NASA Photography was created using HTML, CSS, JavaScript, jQuery, and AJAX.
 
 
 Approach Taken
