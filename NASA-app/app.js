@@ -70,7 +70,7 @@ $(() => {
   let dataRequest = () => {
     for (i = 1; i <= 31; i++) {
       $.ajax({
-        url: `http://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
+        url: `https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
       }).then((data) => {
         // console.log(i);
         const explanation = data.explanation
