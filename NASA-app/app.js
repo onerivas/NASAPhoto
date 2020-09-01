@@ -85,7 +85,7 @@ $(() => {
         const $imageText = $('<div>')
           .text(data.title).css('color', 'white')
           .appendTo($spaceHolder)
-        console.log(data);
+        // console.log(data);
 
       })
       //    console.log('https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date='
