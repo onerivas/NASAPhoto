@@ -5,12 +5,20 @@ $(() => {
   /////////////////
   let today = new Date()
   let adjustMonth = 1;
+  let yearAdjust = 0
   let currentMonth = today.getMonth() + adjustMonth;
   const findMonth = () => {
     currentMonth = today.getMonth() + adjustMonth;
   }
-  let currentYear = today.getFullYear()
-
+  let currentYear = today.getFullYear() - yearAdjust
+  const findYear = () => {
+    if (currentMonth === 0){
+      yearAdjust++
+      currentMonth = 11
+      adjustMonth = 1
+      currentYear = currentYear - yearAdjust
+    }
+  }
   //////////////////
   // declating the close button
   //////////////////
@@ -60,9 +68,11 @@ $(() => {
     $('.gallery').empty()
     adjustMonth -= 1
     findMonth()
+    findYear()
     // console.log(today.getMonth());
     // console.log(adjustMonth)
-    // console.log(currentMonth);
+    console.log(currentMonth);
+    console.log(currentYear);
     fullMonthDataRequest()
 
   }
