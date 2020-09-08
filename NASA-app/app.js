@@ -73,7 +73,7 @@ $(() => {
     // console.log(adjustMonth)
     console.log(currentMonth);
     console.log(currentYear);
-    fullMonthDataRequest()
+    monthDataRequest(31)
 
   }
   $previousBtn.on('click', previousMonth)
@@ -85,7 +85,7 @@ $(() => {
     // console.log(today.getMonth());
     // console.log(adjustMonth)
     // console.log(currentMonth);
-    fullMonthDataRequest()
+    monthDataRequest(31)
   }
   $nextBtn.on('click', nextMonth)
 /////////////////////
@@ -93,8 +93,8 @@ $(() => {
 // Using a for loop to send 31 requests for all the days there can be in a month
 // using if else to only get the posts that are photos and then creating div with text and appending it to the gallery div. each div has a built in event listener for the modal.
 /////////////////////
-let fullMonthDataRequest = () => {
-  for (i = 1; i <= 31; i++) {
+const monthDataRequest = (numOfDays) => {
+  for (i = 1; i <= numOfDays; i++) {
     $.ajax({
       url: `https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
     }).then((data) => {
@@ -119,36 +119,11 @@ let fullMonthDataRequest = () => {
     // `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-i}`)
   }
 }
-  let currentMonthDataRequest = () => {
-    for (i = 1; i <= today.getDate(); i++) {
-      $.ajax({
-        url: `https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
-      }).then((data) => {
-        if (data.media_type === 'image'){
-        // console.log(i);
-        const explanation = data.explanation
-        const imageUrl = data.url
-        const $spaceHolder = $('<div>').addClass('holder').appendTo('.gallery')
-        const $spaceImg = $('<div>')
-          .attr('id', i)
-          .addClass('space-image')
-          .css('background-image', `url(${imageUrl})`)
-          .appendTo($spaceHolder)
-          .on('click', openModal)
-        const $imageText = $('<div>')
-          .text(data.title).css('color', 'white')
-          .appendTo($spaceHolder)
-        // console.log(data);
-      }
-      })
-      //    console.log('https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date='
-      // `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()-i}`)
-    }
-  }
+
 /////////////////
 // function for data is ran.
 ////////////////
-  currentMonthDataRequest()
+  monthDataRequest(today.getDate())
 
 // jquery closing bracket
 })
