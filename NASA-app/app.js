@@ -50,9 +50,6 @@ $(() => {
     adjustMonth -= 1
     findMonth()
     findYear()
-
-    console.log(currentMonth);
-    console.log(currentYear);
     monthDataRequest(31)
 
   }
@@ -62,7 +59,6 @@ $(() => {
     $('.gallery').empty()
     adjustMonth += 1
     findMonth()
-
     monthDataRequest(31)
   }
   $nextBtn.on('click', nextMonth)
@@ -77,7 +73,6 @@ $(() => {
         url: `https://api.nasa.gov/planetary/apod?api_key=czm8n20NzhRSk6GRW6zD1u7FflGU4VqwyoJohXDp&date=${currentYear}-${currentMonth}-${i}`
       }).then((data) => {
         if (data.media_type === 'image') {
-
           const explanation = data.explanation
           const imageUrl = data.url
           const $spaceHolder = $('<div>').addClass('holder').appendTo('.gallery')
@@ -90,7 +85,6 @@ $(() => {
           const $imageText = $('<div>')
             .text(data.title).css('color', 'white')
             .appendTo($spaceHolder)
-
         }
       })
 
@@ -101,6 +95,5 @@ $(() => {
   // function for data is ran.
   ////////////////
   monthDataRequest(today.getDate())
-
-  // jquery closing bracket
-})
+    
+}) // jquery closing bracket
