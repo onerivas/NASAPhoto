@@ -95,5 +95,5 @@ $(() => {
   // function for data is ran.
   ////////////////
   monthDataRequest(today.getDate())
-    
+
 }) // jquery closing bracket
