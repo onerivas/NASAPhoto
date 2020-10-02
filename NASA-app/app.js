@@ -27,7 +27,7 @@ $(() => {
   //////////////
   // The Functions to open adn close the modal.
   //////////////
-  const $closeBtn = $('#close-modal')
+  const $closeBtn = $('#modal')
   const openModal = (event) => {
     let newModalBackground = $(event.currentTarget).css('background-image')
 
