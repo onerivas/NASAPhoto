@@ -62,11 +62,12 @@ h1 {
   font-family: nasalization, sans-serif;
   color: white;
   font-size: 28px;
-  margin-top: 2em;
+  margin-top: 1em;
   z-index: 1;
   animation-name: title-animation;
   animation-duration: 3s;
 }
+
 
 #modal {
   display: none;
@@ -112,9 +113,15 @@ h1 {
   color: rgba(255,255,255, 1);
   background-color: black;
   font-size: 25px;
-  animation-name: title-animation;
-  animation-duration: 3s;
 }
+#previousBtn:hover {
+  opacity: 0.7;
+}
+#previousBtn:focus {
+  outline: none;
+}
+
+
 #nextBtn {
   position: fixed;
   right: 5px;
@@ -129,7 +136,17 @@ h1 {
   animation-name: title-animation;
   animation-duration: 3s;
 }
+#nextBtn:hover {
+  opacity: 0.7;
+}
+#nextBtn:focus {
+  outline: none;
+}
 
+
+footer{
+  color: inherit;
+}
 
 @media(min-width: 950px){
   body {
@@ -243,9 +260,15 @@ h1 {
     font-family: nasalization, sans-serif;
     color: rgba(255,255,255, 1);
     border: 0;
-    animation-name: title-animation;
-    animation-duration: 3s;
+
   }
+  #previousBtn:hover {
+    opacity: 0.7;
+  }
+  #previousBtn:focus {
+    outline: none;
+  }
+
   #nextBtn {
     position: fixed;
     right: 10px;
@@ -260,7 +283,36 @@ h1 {
   }
 }
 
+#nextBtn:hover {
+  opacity: 0.7;
+}
+#nextBtn:focus {
+  outline: none;
+}
 
+
+footer{
+  position: fixed;
+  top:92%;
+  font-family: nasalization, sans-serif;
+  color: white;
+  animation-name: title-animation;
+  animation-duration: 3s;
+}
+ul{
+  display: flex;
+}
+
+li{
+  padding: .5em;
+  list-style-type:none;
+}
+
+i {
+  color: white;
+  animation-name: title-animation;
+  animation-duration: 3s;
+}
 
 @keyframes title-animation {
   0% {color: black;}
