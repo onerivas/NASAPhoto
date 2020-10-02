@@ -7,8 +7,8 @@ body {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 95vw;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ body {
 }
 .gallery {
   width: 80vw;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -33,6 +33,7 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
 
 .gallery::-webkit-scrollbar {
 display: none;
@@ -67,10 +68,9 @@ display: none;
 }
 
 h1 {
+  margin: 0;
   font-family: nasalization, sans-serif;
   color: white;
-  font-size: 28px;
-  margin-top: .3em;
   z-index: 1;
   animation-name: title-animation;
   animation-duration: 3s;
@@ -86,7 +86,12 @@ h1 {
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background-color: rgba(0, 0, 0, .7)
+  background-color: rgba(0, 0, 0, .7);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+#modal::-webkit-scrollbar {
+display: none;
 }
 
 #modal-image {
@@ -115,8 +120,6 @@ h1 {
   position: fixed;
   left: 30px;
   top: 50%;
-  width: 50px;
-  height: 50px;
   font-family: nasalization, sans-serif;
   border: 0;
   color: rgba(255,255,255, 1);
@@ -135,8 +138,6 @@ h1 {
   position: fixed;
   right: 30px;
   top: 50%;
-  width: 50px;
-  height: 50px;
   font-family: nasalization, sans-serif;
   border: 0;
   color: rgba(255,255,255, 1);
@@ -154,10 +155,23 @@ h1 {
 
 
 footer{
+  display: flex;
+  justify-content: center;
   color: inherit;
 }
+ul{
+  display: flex;
+  justify-content: center;
 
-@media(min-width: 950px){
+}
+
+li{
+  padding: .5em;
+  list-style-type:none;
+
+}
+
+@media(min-width: 500px){
   body {
     display: flex;
     justify-content: center;
@@ -182,7 +196,7 @@ footer{
   }
   .gallery {
     width: 80vw;
-    height: 75vh;
+    height: 90%;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -232,7 +246,7 @@ footer{
     color: white;
     animation-name: title-animation;
     animation-duration: 3s;
-    margin: .5em 0 ;
+    margin: 0 ;
   }
 
   #modal {
@@ -245,6 +259,11 @@ footer{
     height: 100vh;
     overflow: auto;
     background-color: rgba(0, 0, 0, .7);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  #modal::-webkit-scrollbar {
+  display: none;
   }
 
   #modal-image {
@@ -261,8 +280,6 @@ footer{
     position: fixed;
     left: 50px;
     top: 50%;
-    width: 50px;
-    height: 50px;
     font-family: nasalization, sans-serif;
     color: rgba(255,255,255, 1);
     border: 0;
@@ -279,8 +296,6 @@ footer{
     position: fixed;
     right: 50px;
     top: 50%;
-    width: 50px;
-    height: 50px;
     font-family: nasalization, sans-serif;
     color: rgba(255,255,255, 1);
     border: 0;
@@ -299,7 +314,7 @@ footer{
 
 footer{
   position: fixed;
-  top:92%;
+  bottom:0;
   font-family: nasalization, sans-serif;
   color: white;
   animation-name: title-animation;
@@ -307,11 +322,14 @@ footer{
 }
 ul{
   display: flex;
+  justify-content: center;
+  transform: translate(-5%, 0);
 }
 
 li{
   padding: .5em;
   list-style-type:none;
+
 }
 
 i {
